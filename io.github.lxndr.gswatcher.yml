@@ -37,7 +37,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/lxndr/gswatcher
-        commit: bbf573aae9f88663a1601c78755cb9f3c0f7566e
+        tag: v1.6.7
 cleanup:
   - /bin/geoiplookup
   - /bin/geoiplookup6
