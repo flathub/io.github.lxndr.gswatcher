@@ -9,6 +9,7 @@ finish-args:
   - '--socket=fallback-x11'
   - '--socket=wayland'
   - '--share=network'
+  - '--env=GSW_GAME_ICONS_DIR=/app/extra/nonfree-icons/games'
 modules:
   - shared-modules/lua5.4/lua-5.4.json
   - name: geoip
@@ -24,6 +25,19 @@ modules:
       - gzip -d GeoIPCity.dat.gz
       - install -d $FLATPAK_DEST/share/GeoIP
       - install -m644 -t $FLATPAK_DEST/share/GeoIP GeoIPCity.dat
+  - name: imagemagick
+    config-opts:
+      - --disable-static
+      - --disable-docs
+      - --without-perl
+      - --without-x
+      - --without-magick-plus-plus
+    sources:
+      - type: git
+        url: https://github.com/ImageMagick/ImageMagick
+        tag: 7.1.1-21
+    cleanup:
+      - '*'
   - name: iso-flag-png
     buildsystem: simple
     sources:
@@ -37,7 +51,23 @@ modules:
     sources:
       - type: git
         url: https://github.com/lxndr/gswatcher
-        tag: v1.7.0
+        commit: 08d4511cb1f4ad8ad672a5631922a4b18effb408
+  - name: nonfree-icons
+    buildsystem: simple
+    sources:
+      - type: extra-data
+        url: https://github.com/lxndr/gswatcher-nonfree-icons/releases/download/v1.7.1/nonfree-icons.tar.gz
+        filename: nonfree-icons.tar.gz
+        sha256: 93b624962da89c1d8462eb415c7f8e19d7f0cd666a4bca180c7c52a6c39eeed0
+        size: 31795
+        installed-size: 33469
+      - type: script
+        dest-filename: apply_extra
+        commands:
+          - tar -xf nonfree-icons.tar.gz
+          - rm nonfree-icons.tar.gz
+    build-commands:
+      - install apply_extra ${FLATPAK_DEST}/bin
 cleanup:
   - /bin/geoiplookup
   - /bin/geoiplookup6
