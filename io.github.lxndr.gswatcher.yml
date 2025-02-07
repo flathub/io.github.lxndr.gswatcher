@@ -1,6 +1,6 @@
 app-id: io.github.lxndr.gswatcher
 runtime: org.gnome.Platform
-runtime-version: '45'
+runtime-version: '47'
 sdk: org.gnome.Sdk
 command: gswatcher
 finish-args:
@@ -19,8 +19,8 @@ modules:
         url: https://github.com/maxmind/geoip-api-c/archive/v1.6.12.tar.gz
         sha256: 99b119f8e21e94f1dfd6d49fbeed29a70df1544896e76cd456f25e397b07d476
       - type: file
-        url: https://sources.archlinux.org/other/packages/geoip-database/20230901/GeoIPCity.dat.gz
-        sha256: 3fe1e42b1992060165c79168e6a18cf7ccfed26e5cba641052435eb68f1db32b
+        url: https://sources.archlinux.org/other/packages/geoip-database/20250129/GeoIPCity.dat.gz
+        sha256: bf2e8452642514ca64e2ba6aace3c3bf08be7b79f0d994fd98d68dc87b395ce4
     post-install:
       - gzip -d GeoIPCity.dat.gz
       - install -d $FLATPAK_DEST/share/GeoIP
@@ -35,7 +35,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/ImageMagick/ImageMagick
-        tag: 7.1.1-21
+        tag: 7.1.1-43
     cleanup:
       - '*'
   - name: iso-flag-png
@@ -51,7 +51,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/lxndr/gswatcher
-        commit: 08d4511cb1f4ad8ad672a5631922a4b18effb408
+        commit: 80391b4657f22996843ca9adcf5a0cb1efd56482
   - name: nonfree-icons
     buildsystem: simple
     sources:
