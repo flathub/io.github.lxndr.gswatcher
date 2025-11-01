@@ -1,6 +1,6 @@
 app-id: io.github.lxndr.gswatcher
 runtime: org.gnome.Platform
-runtime-version: '47'
+runtime-version: '49'
 sdk: org.gnome.Sdk
 command: gswatcher
 finish-args:
@@ -35,15 +35,15 @@ modules:
     sources:
       - type: git
         url: https://github.com/ImageMagick/ImageMagick
-        tag: 7.1.1-43
+        tag: 7.1.2-8
     cleanup:
       - '*'
   - name: iso-flag-png
     buildsystem: simple
     sources:
       - type: archive
-        url: http://packages.linuxmint.com/pool/main/f/flags/flags_1.0.2.tar.xz
-        sha256: 4726333387e5795d49a2a54f7ffbbdb5b50f47b6aa20533a78b6eded347ca57c
+        url: http://packages.linuxmint.com/pool/main/f/flags/flags_1.0.4.tar.xz
+        sha256: 594f22f076d8e34ca5730d3a4cb5e76d6dc2828b633cd2ea090fc0e0c5786993
     build-commands:
       - cp -r usr/share $FLATPAK_DEST
   - name: gswatcher
@@ -51,7 +51,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/lxndr/gswatcher
-        commit: 80391b4657f22996843ca9adcf5a0cb1efd56482
+        commit: 0989ef2c7a2a2ffd0ca06d86e5a14b4ae1e0c5d2
   - name: nonfree-icons
     buildsystem: simple
     sources:
