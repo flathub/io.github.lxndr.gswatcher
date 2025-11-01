@@ -51,7 +51,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/lxndr/gswatcher
-        commit: 0989ef2c7a2a2ffd0ca06d86e5a14b4ae1e0c5d2
+        commit: dbcedbdd2ac7902c9c063d1fd326c35ccb82659c
   - name: nonfree-icons
     buildsystem: simple
     sources:
@@ -72,6 +72,7 @@ cleanup:
   - /bin/geoiplookup
   - /bin/geoiplookup6
   - /include
+  - /lib/debug
   - /lib/lua
   - /lib/pkgconfig
   - /share/lua
