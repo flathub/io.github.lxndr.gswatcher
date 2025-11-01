@@ -72,7 +72,6 @@ cleanup:
   - /bin/geoiplookup
   - /bin/geoiplookup6
   - /include
-  - /lib/debug
   - /lib/lua
   - /lib/pkgconfig
   - /share/lua
