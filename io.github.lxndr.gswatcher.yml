@@ -51,7 +51,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/lxndr/gswatcher
-        commit: 7371ad8f3f867fc07c87b8d37eea06e561755d4f
+        commit: 8a5ee8f99d9f6cb8eaf02c83d5a4151fda4c4d2d
   - name: nonfree-icons
     buildsystem: simple
     sources:
